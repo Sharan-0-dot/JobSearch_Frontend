@@ -1,16 +1,29 @@
-# React + Vite
+# Job Search Agent — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The client application for the Job Search Agent platform: an autonomous AI system that matches job seekers with opportunities through semantic understanding, deterministic ranking, and personalized career coaching.
 
-Currently, two official plugins are available:
+This repository contains the user-facing interface only. All matching, ranking, and reasoning happens in the backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What This Connects To
 
-## React Compiler
+This frontend is the client for the [Job Search Agent backend](https://github.com/Sharan-0-dot/JobSearch) — a Spring Boot platform built on LangChain4j, PostgreSQL with pgvector, and a hybrid deterministic-ranking-plus-LLM-explanation architecture.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+For the full picture of what the platform does and how it's built — the agent design, the ranking model, the resume analysis engine, the resilience and observability layers — see the [backend README](https://github.com/Sharan-0-dot/JobSearch/blob/main/readme.md).
 
-## Expanding the ESLint configuration
+In short, the platform:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Takes a natural-language query and finds relevant live job listings
+- Ranks those listings using a transparent, reproducible scoring model — not an LLM guess
+- Explains why each job matches, in plain language
+- Compares a user's resume against any job and surfaces missing skills and concrete improvements
+- Remembers context across a conversation and learns from what a user likes or applies to
+
+This repository is where a person actually does all of that — searching, reading explanations, reviewing matches, uploading a resume, and managing their profile.
+
+## Status
+
+In active development, built against the backend's current API contract. Expect this README to grow as the interface takes shape.
+
+## Related
+
+- Backend & full platform documentation: [github.com/Sharan-0-dot/JobSearch](https://github.com/Sharan-0-dot/JobSearch)
