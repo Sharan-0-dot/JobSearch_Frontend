@@ -1,1 +1,74 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E3DD;
+  --color-ink: #1C1B19;
+  --color-ink-muted: #6B6862;
+  --color-accent: #0F7A5C;
+  --color-accent-soft: #E6F2EC;
+  --color-warn: #B45309;
+  --color-warn-soft: #FBF0E2;
+  --color-danger: #B3261E;
+  --color-danger-soft: #FBEAE8;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --text-display-lg: 2.5rem;
+  --text-display-lg--line-height: 1.15;
+  --text-display: 1.75rem;
+  --text-display--line-height: 1.25;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.5;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-score: 1.125rem;
+  --text-score--line-height: 1;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  @keyframes message-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-message-in {
+    animation: message-in 150ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-message-in {
+    animation: none;
+  }
+}
