@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* Colors */
   --color-bg: #FAFAF8;
   --color-surface: #FFFFFF;
   --color-border: #E5E3DD;
@@ -13,24 +14,33 @@
   --color-danger: #B3261E;
   --color-danger-soft: #FBEAE8;
 
+  /* Fonts */
   --font-display: "Fraunces", serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
+  /* Typography */
   --text-display-lg: 2.5rem;
   --text-display-lg--line-height: 1.15;
+
   --text-display: 1.75rem;
   --text-display--line-height: 1.25;
+
   --text-body: 0.9375rem;
   --text-body--line-height: 1.5;
+
   --text-caption: 0.8125rem;
   --text-caption--line-height: 1.4;
+
   --text-score: 1.125rem;
   --text-score--line-height: 1;
 }
 
 @layer base {
-  * {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     border-color: var(--color-border);
   }
 
@@ -39,14 +49,7 @@
     color: var(--color-ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    text-rendering: optimizeLegibility;
   }
 }
 
@@ -62,13 +65,37 @@
     }
   }
 
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateX(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .animate-message-in {
     animation: message-in 150ms ease-out;
+  }
+
+  .animate-toast-in {
+    animation: toast-in 200ms ease-out;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-message-in {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-message-in,
+  .animate-toast-in {
     animation: none;
   }
 }

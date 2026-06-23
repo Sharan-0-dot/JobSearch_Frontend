@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 export function useApi(apiFn, deps = []) {
   const [state, setState] = useState({ data: null, loading: true, error: null })
+  const [trigger, setTrigger] = useState(0)
 
   useEffect(() => {
     let active = true
@@ -10,7 +11,9 @@ export function useApi(apiFn, deps = []) {
       .then((data) => active && setState({ data, loading: false, error: null }))
       .catch((error) => active && setState({ data: null, loading: false, error }))
     return () => { active = false }
-  }, deps)
+  }, [...deps, trigger])
 
-  return state
+  const refetch = useCallback(() => setTrigger((t) => t + 1), [])
+
+  return { ...state, refetch }
 }
