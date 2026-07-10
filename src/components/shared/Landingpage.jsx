@@ -70,7 +70,7 @@ export default function LandingPage() {
             Enter the App
           </button>
           <p className="font-body text-caption text-ink-muted mt-4">
-            Demo project — enter any username to explore, no signup or real data needed.
+            Demo project — enter any username to explore, no signup needed.
           </p>
         </div>
       </section>
@@ -185,7 +185,7 @@ export default function LandingPage() {
             className="px-6 py-3 rounded-md bg-accent text-surface font-body text-body font-medium
                        hover:opacity-90 transition-opacity"
           >
-            Try the Demo
+            Try it (you may like it)
           </button>
         </div>
       </section>
