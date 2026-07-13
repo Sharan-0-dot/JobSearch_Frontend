@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 import { MessageSquare, Briefcase, User, FileText } from 'lucide-react'
 
 const navItems = [
-  { to: '/', label: 'Agent', icon: MessageSquare, end: true },
-  { to: '/jobs', label: 'Jobs', icon: Briefcase },
-  { to: '/profile', label: 'Profile', icon: User },
-  { to: '/resume', label: 'Resume', icon: FileText },
+  { to: '/app', label: 'Agent', icon: MessageSquare, end: true },
+  { to: '/app/jobs', label: 'Jobs', icon: Briefcase },
+  { to: '/app/profile', label: 'Profile', icon: User },
+  { to: '/app/resume', label: 'Resume', icon: FileText },
 ]
 
 export default function MobileTabBar() {

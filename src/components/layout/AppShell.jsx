@@ -4,11 +4,11 @@ import TopBar from './TopBar'
 import MobileTabBar from './MobileTabBar'
 
 const titleRoutes = [
-  { path: '/', title: 'Agent' },
-  { path: '/jobs', title: 'Jobs' },
-  { path: '/jobs/:id', title: 'Job detail' },
-  { path: '/profile', title: 'Profile' },
-  { path: '/resume', title: 'Resume' },
+  { path: '/app', title: 'Agent' },
+  { path: '/app/jobs', title: 'Jobs' },
+  { path: '/app/jobs/:id', title: 'Job detail' },
+  { path: '/app/profile', title: 'Profile' },
+  { path: '/app/resume', title: 'Resume' },
 ]
 
 function getTitle(pathname) {
