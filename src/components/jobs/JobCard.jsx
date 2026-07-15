@@ -8,7 +8,7 @@ export default function JobCard({ job }) {
 
   return (
     <div
-      onClick={() => navigate(`/jobs/${job.id}`)}
+      onClick={() => navigate(`/app/jobs/${job.id}`)}
       className="bg-surface border border-border rounded-lg p-4 cursor-pointer
                  transition-colors hover:border-accent flex gap-4"
     >

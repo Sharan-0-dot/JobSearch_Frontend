@@ -65,7 +65,7 @@ export default function JobDetailPage() {
   return (
     <div className="p-6 max-w-2xl mx-auto">
       <button
-        onClick={() => navigate('/jobs')}
+        onClick={() => navigate('/app/jobs')}
         className="flex items-center gap-1.5 font-body text-caption text-ink-muted hover:text-ink mb-4"
       >
         <ArrowLeft size={14} /> Back to jobs
